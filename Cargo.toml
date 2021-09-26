@@ -13,9 +13,13 @@ anyhow = "1.0"
 
 # Utils
 rand = "0.8"
+evcxr = "0.11"
 
 # Logging
 dotenv = "0.15"
 config = "0.11"
 log = "0.4"
 env_logger = "0.9"
+
+[patch.crates-io]
+lexical-core = {git = 'https://github.com/Gelbpunkt/rust-lexical', branch = 'fix-warnings-and-update-deps'}
