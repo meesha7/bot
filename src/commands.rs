@@ -32,5 +32,19 @@ struct Settings;
 pub mod utility;
 pub use utility::*;
 #[group]
-#[commands(avatar, user, leaderboard, guild, emoji, choose, ping, hug, answer, headpat, bonk)]
+#[commands(
+    answer,
+    avatar,
+    bonk,
+    choose,
+    cuddle,
+    emoji,
+    guild,
+    headpat,
+    hug,
+    leaderboard,
+    pat,
+    ping,
+    user
+)]
 struct Utility;

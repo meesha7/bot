@@ -40,6 +40,15 @@ macro_rules! text_command {
 
 text_command!(hug, "hugs", "Hugs another user.", "hug <user>", "hug Elinvynia", "");
 text_command!(
+    cuddle,
+    "cuddles",
+    "Cuddles another user.",
+    "cuddle <user>",
+    "cuddle Elinvynia",
+    ""
+);
+text_command!(pat, "pats", "Headpats another user.", "pat <user>", "pat Elinvynia", "");
+text_command!(
     headpat,
     "headpats",
     "Headpats another user.",
