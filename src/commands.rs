@@ -36,6 +36,7 @@ pub use utility::*;
     answer,
     avatar,
     bonk,
+    boop,
     choose,
     cuddle,
     emoji,

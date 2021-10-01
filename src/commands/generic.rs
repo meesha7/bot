@@ -64,3 +64,11 @@ text_command!(
     "bonk Elinvynia",
     ". Go to horny jail!"
 );
+text_command!(
+    boop,
+    "boops",
+    "boops another user.",
+    "boop <user>",
+    "boop Elinvynia",
+    ""
+);
