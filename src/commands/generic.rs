@@ -1,9 +1,11 @@
 use crate::prelude::*;
+use chrono::Datelike;
 use serenity::{
     framework::standard::{macros::command, Args, CommandResult},
     model::prelude::*,
     prelude::*,
 };
+use std::env;
 
 macro_rules! text_command {
     ($cname:ident, $action:expr, $desc:expr, $usage:expr, $example:expr, $extra:expr) => {
@@ -36,6 +38,31 @@ macro_rules! text_command {
             Ok(())
         }
     };
+}
+
+#[command]
+#[description = "Check if it's Wednesday"]
+#[usage = "frog"]
+#[example = "frog"]
+async fn frog(ctx: &Context, msg: &Message) -> CommandResult {
+    let frog_url = if let Ok(e) = env::var("FROG_URL") {
+        e
+    } else {
+        String::from("Sorry, the frog cannot be found :(")
+    };
+
+    let current_date = chrono::offset::Local::now();
+    let weekday = current_date.weekday();
+
+    let message = if weekday == chrono::Weekday::Wed {
+        frog_url
+    } else {
+        String::from("It's not Wednesday yet!")
+    };
+
+    msg.channel_id.say(&ctx, message).await?;
+
+    Ok(())
 }
 
 text_command!(hug, "hugs", "Hugs another user.", "hug <user>", "hug Elinvynia", "");

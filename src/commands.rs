@@ -40,6 +40,7 @@ pub use utility::*;
     choose,
     cuddle,
     emoji,
+    frog,
     guild,
     headpat,
     hug,
