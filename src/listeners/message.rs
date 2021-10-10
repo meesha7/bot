@@ -22,4 +22,5 @@ pub async fn message(new_message: Message) {
 
     let _ = inc_user_score(guild_id, new_message.channel_id, new_message.author.id).await;
     let _ = inc_user_money(guild_id, new_message.author.id).await;
+    let _ = update_user_activity(guild_id, new_message.author.id).await;
 }

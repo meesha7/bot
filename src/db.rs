@@ -1,6 +1,7 @@
 use crate::prelude::*;
 use std::{fs::File, path::Path};
 
+pub mod activity;
 pub mod leaderboard;
 pub mod log;
 pub mod money;
